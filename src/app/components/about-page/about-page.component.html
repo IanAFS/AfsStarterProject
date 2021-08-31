@@ -1,0 +1,25 @@
+
+<div class="aboutPage">
+    <p><b>The Accounts</b></p>
+    <!-- <p *ngFor= "let movie of scheduleList; let i = index"> <u> Time Slot {{i+1}}: </u> <br> Title: <b> {{movie}} </b> | Price: $10.00</p> -->
+    
+<!-- 
+    <div *ngFor= "let slot of movieSchedule; let i = index">
+        <u> Time Slot {{i+1}}: </u>  <br> 
+        <p *ngFor= "let movie of slot; let j = index">
+        Title: <b> {{movie.movieTitle}} </b> | Price: $10.00
+        </p>
+    </div> -->
+    <div *ngFor=" let account of accountList; let i = index">
+        <u>Account {{i+1}}</u>
+        Account Name : {{account.username}}
+        Created at : {{account.createTime}}
+
+    </div>
+
+    
+
+    <!-- <p>{{this.scheduleList}}</p> -->
+
+   
+</div>

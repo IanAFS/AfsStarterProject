@@ -1,0 +1,91 @@
+
+
+<div class="movieForm">
+    <div>
+
+        <div class="card">
+            <h4 class="card-header">Edit Movie Form</h4>
+            <div class="card-body">
+                <form [formGroup]="editMovieForm" (ngSubmit)="onSubmit()">
+                  
+                        <div *ngIf="submitFail"><i style="color: red">Something went wrong with the submition</i></div>
+                
+                    <div class="form-group">
+                        <label for="movieTitle" >Movie Title <i style="color: grey">(required)</i></label>
+                        <input type="text" formControlName="movieTitle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.movieTitle.errors }" placeholder={{currentMovie.movieTitle}} value={{currentMovie.movieTitle}}  required="true" />
+                  
+                    </div>
+
+
+                    <form >
+                        <label for="runtime">Runtime <i style="color: grey">(required)</i> </label>
+                        <br>
+                        <input type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="2" size='2' name="hh" placeholder ={{hh}} value ={{hh}}  id="numin" [(ngModel)]="hh" />
+                        :
+                        <input type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="2"  name="mm" placeholder ={{mm}} value ={{mm}} id="numin" [(ngModel)]="mm" />
+                        :
+                        <input type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="2"  name="ss" placeholder ={{ss}} value ={{ss}} id="numin" [(ngModel)]="ss" />
+                    </form>
+          
+                    <!-- <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="genre" formControlName="genre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.genre.errors }" placeholder="Genre" />
+                        <div *ngIf="submitted && f.genre.errors" class="invalid-feedback">
+                            <div *ngIf="f.genre.errors.required">genre is required</div>
+                        </div>
+                    </div> -->
+                    
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <select class="custom-select"  placeholder="temp"  (change)="changeGenre($event)" formControlName="genre">
+                            
+                            <option [ngValue]="null"  disabled>Choose the Genre</option>
+                            
+                            <option *ngFor="let genre of genreList"
+                            [selected]="genre.genreId == currentGenreId" 
+                            value= "{{genre.name}}"
+                            >
+                                {{genre.name}}
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <!-- <select [(ngModel)]="currentGenre">
+                        <option *ngFor="let genre of genreList">
+                           {{genre.name}}
+                        </option>
+                     </select> -->
+
+
+                    <div class="form-group">
+
+                      
+                   
+
+                        <button  class="btn btn-primary">
+                          
+                            update Movie
+                        </button>
+
+                              
+                    </div>
+                    <button type="button" (click)="deleteMovie()"  class="btn btn-primary">
+                          
+                       Delete Movie
+                    </button>
+
+
+                </form>
+            </div>
+        </div>
+     
+        
+        </div>
+</div>

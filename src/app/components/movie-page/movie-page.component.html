@@ -1,0 +1,31 @@
+
+<div class="movies">
+    <p><u><b> Movies Playing Now</b></u></p>
+    <!-- <p *ngFor= "let movie of movieList">[POSTER] <br> Title: {{movie}} | Price: $10.00
+    
+        <br>{{movie}} show times: NOT IMPLEMENTED
+    </p> -->
+
+
+    <div *ngFor= "let movie of movieList2">[POSTER] <br> Title: <b>{{movie.movieTitle}}</b> | Price: $10.00
+        <!-- <br> Genre {{movie.genre}} -->
+        <br> RunTime: {{movie.runtime}}
+        <div *ngIf="movie.genre"> Genre: {{movie.genre.name}} </div>
+        Show times: NOT IMPLEMENTED
+        <br> <button [routerLink]="['/movieEditForm', movie.movieNumber]">Edit</button>
+        <!-- <br> <button routerLink="/movieEditForm/{{movie.movieNumber}}">Edit2</button> -->
+        <br>______
+    </div>
+
+
+    <br> <button routerLink="/movieForm">Add Movie</button>
+
+
+    <!-- <p *ngFor= "let account of accountList">[POSTER] <br>  {{account}} 
+    
+        <br>{{account}} account
+    </p> -->
+
+    <ul id="result"></ul>
+</div>
+

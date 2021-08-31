@@ -1,0 +1,70 @@
+
+
+<div class="showingForm">
+    <div>
+
+        <div class="card">
+            <h4 class="card-header">New Showing Form</h4>
+            <div class="card-body">
+                <form [formGroup]="newShowingForm" (ngSubmit)="onSubmit()">
+                  
+                        <div *ngIf="submitFail"><i style="color: red">Something went wrong with the submition</i></div>
+                
+                        <div class="form-group">
+                            <label for="movie">Movie <i style="color: grey">(required)</i></label>
+                            <select class="custom-select"  (change)="changeMovie($event)" formControlName="movie">
+                                <option [ngValue]="null" selected disabled>Choose the Movie</option>
+                                <option *ngFor="let movie of movieList" [value]="movie.movieNumber" >
+                                    {{movie.movieTitle}}
+                                </option>
+                            </select>
+                        </div>
+
+
+                    <div class="form-group">
+                        <label for="theatorRoom">Theator Room <i style="color: grey">(required)</i></label>
+                        <select class="custom-select"  (change)="changeTheatorRoom($event)" formControlName="theatorRoom">
+                            <option [ngValue]="null" selected disabled>Choose the Theator Room</option>
+                            <option *ngFor="let theatorRoom of theatorRoomList" [value]="theatorRoom.theatorRoomId" >
+                                {{theatorRoom.theatorRoomNum}}
+                            </option>
+                        </select>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="timeSlot">ShowTime <i style="color: grey">(required)</i> </label>
+                        <input type="datetime-local"  formControlName="timeSlot" class="form-control"   />
+                        <!-- <div *ngIf="submitted && f.showTime.errors" class="invalid-feedback">
+                            <div *ngIf="f.showTime.errors.required">showTime is required</div>
+                        </div> -->
+                    </div>
+                    
+                   
+
+
+                    <!-- <select [(ngModel)]="currentGenre">
+                        <option *ngFor="let genre of genreList">
+                           {{genre.name}}
+                        </option>
+                     </select> -->
+
+
+                    <div class="form-group">
+
+                      
+                   
+
+                        <button  class="btn btn-primary">
+                          
+                            Add Showing
+                        </button>
+                       
+                    </div>
+                </form>
+            </div>
+        </div>
+     
+        
+        </div>
+</div>

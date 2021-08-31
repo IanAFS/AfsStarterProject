@@ -1,0 +1,50 @@
+.movieForm{
+    text-align: center;
+    }
+
+    .card {
+        width: 50vw;
+        margin-left: 25vw;
+        }
+
+        #runtime{
+            width: 8em;
+        }
+
+        #numin{
+            width: 3em;
+        }
+
+        .without_ampm::-webkit-datetime-edit-ampm-field {
+            display: none;
+          }
+      
+          /* input[type=time]::-webkit-clear-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            -ms-appearance:none;
+            appearance: none;
+            margin: -10px; 
+          } */
+
+          input[type=time]::-webkit-datetime-edit-ampm-field {
+            display: none;
+          }
+          
+            input[type="time"]::-webkit-calendar-picker-indicator { 
+                background: none; display:none; 
+            }
+
+
+            /* Chrome, Safari, Edge, Opera */
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+
+                /* Firefox */
+                input[type=number] {
+                -moz-appearance: textfield;
+                    }

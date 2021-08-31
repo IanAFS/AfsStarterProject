@@ -1,0 +1,37 @@
+
+<div class="schedule">
+    <p><b>The Schedule</b></p>
+    <!-- <p *ngFor= "let movie of scheduleList; let i = index"> <u> Time Slot {{i+1}}: </u> <br> Title: <b> {{movie}} </b> | Price: $10.00</p> -->
+    
+
+  
+    <!-- <u> Theators</u>
+    <div *ngFor="let theator of theatorList">
+         Theator: {{theator.theatorRoomNum}}
+       <br> Seat total : {{theator.seatsTotal}}
+       <br> ___
+
+    </div> -->
+
+    <u>Movies</u>
+
+    <div *ngFor= "let seats of seatsList">
+       <div *ngIf="seats.movie"> Movie: <b>{{seats.movie.movieTitle}}</b></div> 
+       <div *ngIf="seats.theatorRoom"> Theator: <b>{{seats.theatorRoom.theatorRoomNum}}</b></div> 
+       <div *ngIf="seats.seatsSold"> Seats sold : <b>{{seats.seatsSold}}</b> out of <b>{{seats.theatorRoom.seatsTotal}}</b> seats </div>
+       <ng-template #elseBlock>No Seats sold yet.</ng-template>
+       <div *ngIf="!(seats.seatsSold)"> Seats sold : <b>0</b> out of <b>{{seats.theatorRoom.seatsTotal}}</b> seats </div>
+       <div *ngIf="seats.timeSlot"> Time : {{seats.timeSlot}}  </div> 
+       <div *ngIf="!seats.timeSlot"> Time : notYet </div>
+       <br> ________
+
+
+    </div>
+
+    <br> <button routerLink="/showingForm">Add Showing</button>
+    
+
+    <!-- <p>{{this.scheduleList}}</p> -->
+
+   
+</div>

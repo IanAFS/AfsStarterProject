@@ -1,0 +1,21 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.header1 {
+color: white;
+background-color: blueviolet;
+}
+
+
+.links {
+color: green;
+font-style: italic;
+}
+
+.login {
+    margin-left: 20px;
+    }
+
+.nav-item{
+    margin-left: 10px;
+    font-size: 18px;
+}
